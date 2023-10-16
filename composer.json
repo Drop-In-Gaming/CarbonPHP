@@ -1,5 +1,5 @@
 {
-  "name": "carbonorm/carbonphp",
+  "name": "drop-in-gaming/carbonphp",
   "license": "MIT",
   "type": "library",
   "keywords": [
@@ -10,7 +10,7 @@
     "Session",
     "Routing"
   ],
-  "homepage": "https://github.com/richardtmiles/carbonphp",
+  "homepage": "https://github.com/Drop-In-Gaming/CarbonPHP",
   "description": "A PHP 8.1+ tool kit featuring RESTFUL ORM, sockets, session management, and routing.",
   "minimum-stability": "dev",
   "prefer-stable": true,
