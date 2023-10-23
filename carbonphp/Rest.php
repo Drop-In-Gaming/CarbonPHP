@@ -147,7 +147,7 @@ abstract class Rest extends RestLifeCycle
 
                 $moreReporting = self::jsonSQLReporting(func_get_args(), $sql);
 
-                RestfulValidations::validateGeneratedExternalSqlRequest($sql);
+                //RestfulValidations::validateGeneratedExternalSqlRequest($sql);
 
                 self::postpreprocessRestRequest($sql);
 
@@ -258,7 +258,7 @@ abstract class Rest extends RestLifeCycle
 
                 $moreReporting = self::jsonSQLReporting(func_get_args(), $sql);
 
-                RestfulValidations::validateGeneratedExternalSqlRequest($sql);
+                //RestfulValidations::validateGeneratedExternalSqlRequest($sql);
 
                 self::postpreprocessRestRequest($sql);
 
@@ -551,7 +551,7 @@ abstract class Rest extends RestLifeCycle
 
             $moreReporting = self::jsonSQLReporting(func_get_args(), $sql);
 
-            RestfulValidations::validateGeneratedExternalSqlRequest($sql);
+            //RestfulValidations::validateGeneratedExternalSqlRequest($sql);
 
             self::postpreprocessRestRequest($sql);
 
@@ -825,7 +825,7 @@ abstract class Rest extends RestLifeCycle
 
                 $moreReporting = self::jsonSQLReporting(func_get_args(), $sql);
 
-                RestfulValidations::validateGeneratedExternalSqlRequest($sql);
+                //RestfulValidations::validateGeneratedExternalSqlRequest($sql);
 
                 self::postpreprocessRestRequest($sql);
 
