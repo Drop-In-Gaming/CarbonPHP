@@ -112,7 +112,9 @@ IDENTIFIED;
 
         }
 
-        $c[CarbonPHP::DATABASE][CarbonPHP::DB_PORT] ??= 3306;
+        if (empty($c[CarbonPHP::DATABASE][CarbonPHP::DB_PORT])) {
+            $c[CarbonPHP::DATABASE][CarbonPHP::DB_PORT] = 3306;
+        }
 
         $cnf[] = "port = {$c[CarbonPHP::DATABASE][CarbonPHP::DB_PORT]}";
 
