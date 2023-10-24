@@ -541,11 +541,17 @@ class Session implements SessionHandlerInterface
 
         self::updateSession();
 
+        $GLOBALS['json']['session']['@close'] = $_SESSION;
+
+        $GLOBALS['json']['session']['?close'] = 'closing session from (' . __FILE__ . ') from method (' .  __METHOD__ . ') at line (' . __LINE__ . ')';
+
         try {
 
             if (session_status() !== PHP_SESSION_ACTIVE) {
 
-                throw new PublicAlert('attempted session close with no PHP_SESSION_ACTIVE');
+                $GLOBALS['json']['session_error'] = 'attempted session close with no PHP_SESSION_ACTIVE';
+
+                return true;
 
             }
 
@@ -553,15 +559,21 @@ class Session implements SessionHandlerInterface
 
             if (false === $db->inTransaction()) {
 
+                $GLOBALS['json']['session_warning'] = 'no remaining transaction';
+
                 throw new PublicAlert('Database not in transaction.');
 
             }
 
             if (false === $db->commit()) {
 
+                $GLOBALS['json']['session_error'] =' Database commit failed.';
+
                 throw new PublicAlert('Database commit failed.');
 
             }
+
+            $GLOBALS['json']['session']['database_closed_committed'] = true;
 
             return true;
 
